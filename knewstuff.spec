@@ -4,9 +4,9 @@
 %define debug_package %{nil}
 
 Name: knewstuff
-Version: 4.99.0
-Release: 3
-Source0: http://ftp5.gwdg.de/pub/linux/kde/unstable/frameworks/%{version}/%{name}-%{version}.tar.xz
+Version: 5.0.0
+Release: 1
+Source0: http://ftp5.gwdg.de/pub/linux/kde/stable/frameworks/%{version}/%{name}-%{version}.tar.xz
 Summary: Support for downloading application assets from the network
 URL: http://kde.org/
 License: GPL
@@ -63,8 +63,9 @@ ninja -C build
 
 %install
 DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
+%find_lang %{name}%{major}
 
-%files
+%files -f %{name}%{major}.lang
 %{_datadir}/kf5/knewstuff
 
 %files -n %{libname}
