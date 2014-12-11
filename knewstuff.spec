@@ -57,7 +57,8 @@ Development files for the KDE Frameworks 5 NewStuff library
 
 %prep
 %setup -q
-%cmake -G Ninja
+%cmake -G Ninja \
+	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %build
 ninja -C build
@@ -77,4 +78,4 @@ DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/cmake/KF5*
-%{_prefix}/mkspecs/*
+%{_libdir}/qt5/mkspecs/modules/*.pri
