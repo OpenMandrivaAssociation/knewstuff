@@ -5,7 +5,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: knewstuff
-Version: 5.7.0
+Version: 5.8.0
 Release: 1
 Source0: http://ftp5.gwdg.de/pub/linux/kde/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Support for downloading application assets from the network
@@ -37,7 +37,7 @@ BuildRequires: ninja
 Requires: %{libname} = %{EVRD}
 
 %description
-Support for downloading application assets from the network
+Support for downloading application assets from the network.
 
 %package -n %{libname}
 Summary: Support for downloading application assets from the network
@@ -45,7 +45,7 @@ Group: System/Libraries
 Requires: %{name} = %{EVRD}
 
 %description -n %{libname}
-Support for downloading application assets from the network
+Support for downloading application assets from the network.
 
 %package -n %{devname}
 Summary: Development files for the KDE Frameworks 5 NewStuff library
@@ -53,7 +53,7 @@ Group: Development/KDE and Qt
 Requires: %{libname} = %{EVRD}
 
 %description -n %{devname}
-Development files for the KDE Frameworks 5 NewStuff library
+Development files for the KDE Frameworks 5 NewStuff library.
 
 %prep
 %setup -q
