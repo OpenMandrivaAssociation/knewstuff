@@ -14,7 +14,7 @@ License: GPL
 Group: System/Libraries
 BuildRequires: cmake
 BuildRequires: qmake5
-BuildRequires: extra-cmake-modules5
+BuildRequires: cmake(ECM)
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Gui)
 BuildRequires: pkgconfig(Qt5Test)
@@ -61,14 +61,14 @@ Development files for the KDE Frameworks 5 NewStuff library.
 
 %prep
 %setup -q
-%cmake -G Ninja \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+%cmake_kde5
 
 %build
-ninja -C build
+%ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
+%ninja_install -C build
+
 %find_lang %{name}%{major}
 
 %files -f %{name}%{major}.lang
