@@ -20,9 +20,6 @@ BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(Qt5Xml)
 BuildRequires: cmake(KF5DocTools)
 BuildRequires: cmake(Qt5Test)
-BuildRequires: cmake(Qt5)
-BuildRequires: cmake(ECM)
-BuildRequires: cmake(Qt5)
 BuildRequires: cmake(KF5Archive)
 BuildRequires: cmake(KF5Completion)
 BuildRequires: cmake(KF5Config)
@@ -70,6 +67,7 @@ Development files for the KDE Frameworks 5 NewStuff library.
 
 %files -f %{name}%{major}.lang
 %{_datadir}/kf5/knewstuff
+%{_datadir}/kf5/kmoretools
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}
