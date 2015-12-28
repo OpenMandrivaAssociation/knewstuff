@@ -3,6 +3,9 @@
 %define devname %mklibname KF5NewStuff -d
 %define debug_package %{nil}
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+# Workaround for a build failure with clang 3.7, gold 2.26
+# http://file-store.rosalinux.ru/api/v1/file_stores/9c718b3a47d628f0af10f7f5e1545b8ea9ff0852.log?show=true
+%define _disable_lto 1
 
 Name: knewstuff
 Version:	5.17.0
