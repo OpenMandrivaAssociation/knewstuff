@@ -9,7 +9,7 @@
 
 Name: knewstuff
 Version:	5.18.0
-Release:	1
+Release:	2
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Support for downloading application assets from the network
 URL: http://kde.org/
@@ -52,6 +52,8 @@ Support for downloading application assets from the network.
 Summary: Development files for the KDE Frameworks 5 NewStuff library
 Group: Development/KDE and Qt
 Requires: %{libname} = %{EVRD}
+Requires: cmake(KF5XmlGui)
+Requires: cmake(KF5Attica)
 
 %description -n %{devname}
 Development files for the KDE Frameworks 5 NewStuff library.
