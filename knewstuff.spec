@@ -8,7 +8,7 @@
 %define _disable_lto 1
 
 Name: knewstuff
-Version:	5.28.0
+Version:	5.29.0
 Release:	1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Support for downloading application assets from the network
@@ -73,6 +73,7 @@ Development files for the KDE Frameworks 5 NewStuff library.
 %files -f %{name}%{major}.lang
 %{_datadir}/kf5/knewstuff
 %{_datadir}/kf5/kmoretools
+%{_libdir}/qt5/qml/org/kde/newstuff
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}
