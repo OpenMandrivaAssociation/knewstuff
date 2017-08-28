@@ -9,8 +9,9 @@
 
 Name: knewstuff
 Version:	5.36.0
-Release:	1
+Release:	2
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
+Patch0:	 fix-knsrc-files-not-found.patch
 Summary: Support for downloading application assets from the network
 URL: http://kde.org/
 License: GPL
@@ -62,6 +63,7 @@ Development files for the KDE Frameworks 5 NewStuff library.
 
 %prep
 %setup -q
+%apply_patches
 %cmake_kde5
 
 %build
