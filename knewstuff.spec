@@ -15,6 +15,7 @@ Summary: Support for downloading application assets from the network
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
+Patch0: revert-04cc49c71bdb948e06ccae2d97d7cc1a1d2f62af.patch
 BuildRequires: cmake(ECM)
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Gui)
