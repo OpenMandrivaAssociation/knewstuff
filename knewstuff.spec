@@ -8,14 +8,13 @@
 %define _disable_lto 1
 
 Name: knewstuff
-Version:	5.39.0
+Version:	5.40.0
 Release:	1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Support for downloading application assets from the network
 URL: http://kde.org/
 License: GPL
 Group: System/Libraries
-Patch0: revert-04cc49c71bdb948e06ccae2d97d7cc1a1d2f62af.patch
 BuildRequires: cmake(ECM)
 BuildRequires: pkgconfig(Qt5Core)
 BuildRequires: pkgconfig(Qt5Gui)
