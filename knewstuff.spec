@@ -37,6 +37,7 @@ BuildRequires: cmake(KF5TextWidgets)
 BuildRequires: cmake(KF5WidgetsAddons)
 BuildRequires: cmake(KF5XmlGui)
 BuildRequires: cmake(KF5Attica)
+BuildRequires: cmake(KF5Kirigami2)
 Requires: %{libname} = %{EVRD}
 
 %description
