@@ -8,8 +8,8 @@
 %define _disable_lto 1
 
 Name: knewstuff
-Version:	5.56.0
-Release:	2
+Version:	5.57.0
+Release:	1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Support for downloading application assets from the network
 URL: http://kde.org/
@@ -39,6 +39,8 @@ BuildRequires: cmake(KF5WidgetsAddons)
 BuildRequires: cmake(KF5XmlGui)
 BuildRequires: cmake(KF5Attica)
 BuildRequires: cmake(KF5Kirigami2)
+# For QCH format docs
+BuildRequires: qt5-assistant
 Requires: %{libname} = %{EVRD}
 
 %description
@@ -62,9 +64,16 @@ Requires: cmake(KF5Attica)
 %description -n %{devname}
 Development files for the KDE Frameworks 5 NewStuff library.
 
+%package -n %{name}-devel-docs
+Summary: Developer documentation for %{name} for use with Qt Assistant
+Group: Documentation
+Suggests: %{devname} = %{EVRD}
+
+%description -n %{name}-devel-docs
+Developer documentation for %{name} for use with Qt Assistant
+
 %prep
-%setup -q
-%apply_patches
+%autosetup -p1
 %cmake_kde5
 
 %build
@@ -90,3 +99,6 @@ Development files for the KDE Frameworks 5 NewStuff library.
 %{_libdir}/*.so
 %{_libdir}/cmake/KF5*
 %{_libdir}/qt5/mkspecs/modules/*.pri
+
+%files -n %{name}-devel-docs
+%{_docdir}/qt5/*.{tags,qch}
