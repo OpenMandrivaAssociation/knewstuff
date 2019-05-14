@@ -8,7 +8,7 @@
 %define _disable_lto 1
 
 Name: knewstuff
-Version:	5.57.0
+Version:	5.58.0
 Release:	1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Support for downloading application assets from the network
@@ -86,7 +86,6 @@ Developer documentation for %{name} for use with Qt Assistant
 %find_lang %{name}%{major}
 
 %files -f %{name}%{major}.lang
-%{_datadir}/kf5/knewstuff
 %{_datadir}/kf5/kmoretools
 %{_libdir}/qt5/qml/org/kde/newstuff
 %{_sysconfdir}/xdg/knewstuff.categories
