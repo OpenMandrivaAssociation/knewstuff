@@ -36,6 +36,7 @@ BuildRequires: cmake(KF5WidgetsAddons)
 BuildRequires: cmake(KF5XmlGui)
 BuildRequires: cmake(KF5Attica)
 BuildRequires: cmake(KF5Kirigami2)
+BuildRequires: cmake(KF5Package)
 # For QCH format docs
 BuildRequires: doxygen
 BuildRequires: qt5-assistant
