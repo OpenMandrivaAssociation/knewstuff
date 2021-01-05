@@ -5,10 +5,9 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Name: knewstuff
-Version:	5.77.0
-Release:	2
+Version:	5.78.0
+Release:	1
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
-Patch0:		https://invent.kde.org/frameworks/knewstuff/commit/243ea6155b28457c8b1441fee8ab1037828d21ba.patch
 Summary: Support for downloading application assets from the network
 URL: http://kde.org/
 License: GPL
