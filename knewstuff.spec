@@ -5,7 +5,7 @@
 
 Name: knewstuff
 Version:	5.86.0
-Release:	1
+Release:	2
 Source0: http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 Summary: Support for downloading application assets from the network
 URL: http://kde.org/
@@ -36,6 +36,7 @@ BuildRequires: cmake(KF5XmlGui)
 BuildRequires: cmake(KF5Attica)
 BuildRequires: cmake(KF5Kirigami2)
 BuildRequires: cmake(KF5Package)
+BuildRequires: cmake(KF5Syndication)
 # For QCH format docs
 BuildRequires: doxygen
 BuildRequires: qt5-assistant
@@ -68,7 +69,7 @@ Group: Documentation
 Suggests: %{devname} = %{EVRD}
 
 %description -n %{name}-devel-docs
-Developer documentation for %{name} for use with Qt Assistant
+Developer documentation for %{name} for use with Qt Assistant.
 
 %prep
 %autosetup -p1
